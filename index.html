@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Hicks — Writer</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Redirect from index.html to root URL
+        if (window.location.pathname === '/index.html') {
+            window.history.replaceState(null, '', '/');
+        }
+    </script>
 </head>
 <body class="homepage">
     <nav class="top-nav">
