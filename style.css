@@ -430,6 +430,15 @@ article strong {
     font-weight: 600;
 }
 
+article p a {
+    color: #4A90E2;
+    text-decoration: none;
+}
+
+article p a:hover {
+    text-decoration: underline;
+}
+
 article hr {
     border: none;
     border-top: 1px solid #e0e0e0;
