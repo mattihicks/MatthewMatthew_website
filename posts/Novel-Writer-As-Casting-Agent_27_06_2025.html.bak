@@ -10,23 +10,12 @@
 <body>
     <header>
         <nav>
-            <h1><a href="../">Matthew Hicks</a></h1>
-            <button class="hamburger" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="../">Home</a></li>
+            <h1><a href="../writing.html">Matthew Hicks</a></h1>
+            <ul>
+                <li><a href="../writing.html">Home</a></li>
                 <li><a href="../about.html">About</a></li>
-                <li><a href="../writing.html">Writing</a></li>
-                <li><a href="../music.html">Music</a></li>
-                <li><a href="../photos.html">Photos</a></li>
-                <li><a href="../newsletter.html">Newsletter</a></li>
             </ul>
         </nav>
-    </header>
-    <header>
     </header>
 
     <main>
@@ -48,23 +37,5 @@
     <footer>
         <p>&copy; 2026 Matthew Hicks</p>
     </footer>
-
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>
