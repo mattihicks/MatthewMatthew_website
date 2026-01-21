@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook — Matthew Hicks</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="/">Matthew Hicks</a></h1>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+                <li><a href="guestbook.html" class="active">Guestbook</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="guestbook-content">
+            <div class="guestbook-intro">
+                <h2>Sign the Guestbook</h2>
+                <p>Leave a message, share a thought, say hello. I read everything and appreciate you stopping by.</p>
+            </div>
+
+            <!-- Guestbook Form -->
+            <div class="guestbook-form-container">
+                <form action="https://formspree.io/f/mvzzypql" method="POST" class="guestbook-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <small>Won't be displayed publicly</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website (optional)</label>
+                        <input type="url" id="website" name="website" placeholder="https://">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Sign Guestbook</button>
+                </form>
+            </div>
+
+            <!-- Guestbook Entries -->
+            <div class="guestbook-entries">
+                <h3>Recent Entries</h3>
+
+                <!-- Example entry - delete this and add real entries as they come in -->
+                <div class="guestbook-entry">
+                    <div class="entry-header">
+                        <strong class="entry-name">Matthew</strong>
+                        <span class="entry-date">January 21, 2026</span>
+                    </div>
+                    <p class="entry-message">Welcome to my guestbook! This is a space for visitors to leave their mark. Looking forward to hearing from you.</p>
+                </div>
+
+                <!-- Add new entries here in this format:
+                <div class="guestbook-entry">
+                    <div class="entry-header">
+                        <strong class="entry-name">Visitor Name</strong>
+                        <span class="entry-date">Date</span>
+                    </div>
+                    <p class="entry-message">Their message here</p>
+                </div>
+                -->
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Matthew Hicks</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
