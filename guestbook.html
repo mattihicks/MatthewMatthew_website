@@ -35,7 +35,7 @@
                 <div class="retro-stars">✨ ★ ✨ ★ ✨ ★ ✨</div>
                 <h2 class="retro-title">~*~ SIGN MY GUESTBOOK ~*~</h2>
                 <div class="retro-stars">✨ ★ ✨ ★ ✨ ★ ✨</div>
-                <p class="retro-subtitle">You are visitor number <span class="counter">🌟 ∞ 🌟</span> to this page!</p>
+                <p class="retro-subtitle">You are visitor #<span class="counter" id="visitor-counter">000000</span> to this page!</p>
                 <p>Leave a message, share a thought, say hello. I read everything and appreciate you stopping by.</p>
             </div>
 
@@ -68,6 +68,7 @@
                 </form>
             </div>
 
+
             <!-- Guestbook Entries -->
             <div class="guestbook-entries">
                 <div class="retro-divider">
@@ -93,6 +94,27 @@
                 -->
             </div>
         </article>
+
+           <!-- Retro Webring -->
+            <div class="webring">
+                <div class="webring-header">
+                    <div class="webring-logo">THE<br><span class="webring-logo-big">LITERARY THRILLER WRITER</span><br>RING</div>
+                    <div class="webring-text">
+                        This <strong>Literary Thriller Writer Ring</strong> site is owned by<br>
+                        <strong>Matthew Hicks</strong>.
+                    </div>
+                    <div class="webring-logo">THE<br><span class="webring-logo-big">LITERARY THRILLER WRITER</span><br>RING</div>
+                </div>
+                <div class="webring-nav">
+                    [<a href="#" class="webring-link">Skip Prev</a>]
+                    [<a href="#" class="webring-link">Prev</a>]
+                    [<a href="#" class="webring-link">Next</a>]
+                    [<a href="#" class="webring-link">Skip Next</a>]
+                    [<a href="#" class="webring-link">Random</a>]
+                    [<a href="#" class="webring-link">Next 5</a>]
+                    [<a href="#" class="webring-link">List Sites</a>]
+                </div>
+            </div>
     </main>
 
     <footer>
@@ -115,6 +137,24 @@
                 navMenu.classList.remove('active');
             });
         });
+
+        // Visitor Counter (stored in localStorage)
+        function updateVisitorCounter() {
+            const counterEl = document.getElementById('visitor-counter');
+            let count = localStorage.getItem('guestbook-visits');
+
+            if (!count) {
+                // Start with a random number between 1337 and 9999 for that authentic feel
+                count = Math.floor(Math.random() * (9999 - 1337 + 1)) + 1337;
+            } else {
+                count = parseInt(count) + 1;
+            }
+
+            localStorage.setItem('guestbook-visits', count);
+            counterEl.textContent = count.toString().padStart(6, '0');
+        }
+
+        updateVisitorCounter();
     </script>
 </body>
 </html>
