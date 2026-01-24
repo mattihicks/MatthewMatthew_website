@@ -380,6 +380,14 @@ main article {
     margin-top: 1.5rem;
 }
 
+main article img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
 /* About Page Two-Column Layout */
 .about-content {
     display: grid;
@@ -462,7 +470,7 @@ article hr {
     width: 100%;
     max-width: 700px;
     height: auto;
-    margin: 2rem 0;
+    margin: 2rem auto;
     border-radius: 8px;
     display: block;
 }
